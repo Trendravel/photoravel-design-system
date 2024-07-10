@@ -1,8 +1,12 @@
 {
   "name": "photoravel-design-system",
-  "private": true,
-  "version": "0.0.0",
+  "description": "포토래블 디자인 시스템",
+  "version": "0.1.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trendravel/photoravel-design-system"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

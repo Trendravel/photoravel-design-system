@@ -15,4 +15,26 @@ export default defineConfig({
     dts(),
     svgr(),
   ],
+  build: {
+    lib: {
+      entry: 'src/index.ts',
+      name: 'index',
+      fileName: 'index',
+      formats: ['es', 'cjs'],
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom', '@emotion/react', '@emotion/styled'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+          '@emotion/react': '@emotion/react',
+          '@emotion/styled': '@emotion/styled',
+        },
+      },
+    },
+    commonjsOptions: {
+      esmExternals: ['react'],
+    },
+  },
 });

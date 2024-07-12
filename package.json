@@ -3,18 +3,31 @@
   "description": "포토래블 디자인 시스템",
   "version": "0.1.0",
   "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Trendravel/photoravel-design-system"
+    "url": "git+https://github.com/Trendravel/photoravel-design-system.git"
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc&& vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_61089f2565c2e2d"
+    "chromatic": "npx chromatic --project-token=chpt_61089f2565c2e2d",
+    "publish:npm": "rm -rf dist && mkdir dist && tsc && vite build && cp -r ./src/assets ./dist && npm publish"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",

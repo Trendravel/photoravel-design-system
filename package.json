@@ -1,7 +1,7 @@
 {
   "name": "photoravel-design-system",
   "description": "포토래블 디자인 시스템",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
